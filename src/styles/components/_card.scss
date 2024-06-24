@@ -1,5 +1,12 @@
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
 .card {
-  flex: 1 0 25%;
+  flex: 1 0 16%;
   min-width: 260px;
   max-width: 280px;
   height: 620px;
@@ -24,7 +31,6 @@
 
   img {
     width: 80%;
-    height: 254px;
     object-fit: cover;
     object-position: top;
     display: block;
@@ -33,18 +39,23 @@
     box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
       0 16px 1px rgba(255, 255, 255, 0.05);
   }
+
   h2 {
     margin: 24px 0 0px;
     letter-spacing: 1px;
     line-height: 20px;
   }
-  h5 {
+
+  h3 {
     color: $color-3;
     letter-spacing: 1px;
     font-size: 1.2rem;
     font-weight: 300;
   }
+
   h4 {
+    display: flex;
+    align-items: center;
     letter-spacing: 1px;
     font-size: 1.2rem;
     margin-top: -4px;
@@ -52,12 +63,20 @@
     span {
       font-size: 0.7rem;
     }
+
+    .star-icon {
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+    }
   }
+
   ul {
     margin: 6px 0;
     display: flex;
     flex-wrap: wrap;
   }
+
   li {
     background: #212040;
     border-radius: 18px;
@@ -69,11 +88,13 @@
       margin-left: -4px;
     }
   }
+
   h3 {
     letter-spacing: 1px;
     font-size: 1.4rem;
     margin-top: 10px;
   }
+
   p {
     color: $color-3;
     font-size: 1.3rem;
@@ -85,6 +106,7 @@
       display: none;
     }
   }
+
   .btn {
     background: #546fe4;
     position: absolute;
