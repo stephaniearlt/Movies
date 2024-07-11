@@ -1,49 +1,78 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Search = ({ handleSearch, handleFilter }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const Search = ({ handleGenreSearch, handleTopFilter, handleFlopFilter }) => {
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [genres, setGenres] = useState([]);
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+  useEffect(() => {
+    const fetchGenres = async () => {
+      const apiKey = "ed82f4c18f2964e75117c2dc65e2161d";
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=fr-FR`
+        );
+        if (!response.ok) {
+          throw new Error("Erreur lors du chargement des genres");
+        }
+        const data = await response.json();
+        setGenres(data.genres);
+      } catch (error) {
+        console.error("Erreur lors du chargement des genres :", error);
+      }
+    };
+
+    fetchGenres();
+  }, []);
+
+  const handleGenreChange = (event) => {
+    setSelectedGenre(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleGenreSubmit = (event) => {
     event.preventDefault();
-    handleSearch(searchTerm);
-  };
-
-  const handleTopFilter = () => {
-    handleFilter("top");
-  };
-
-  const handleFlopFilter = () => {
-    handleFilter("flop");
+    if (selectedGenre !== "") {
+      handleGenreSearch(selectedGenre);
+    }
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
-      <div className="search-input">
-        <input
-          type="text"
-          placeholder="Rechercher des films..."
-          value={searchTerm}
-          onChange={handleChange}
-        />
+    <form className="search-form" onSubmit={handleGenreSubmit}>
+      <div className="genre-select">
+        <label htmlFor="genre-select" className="sr-only">Sélectionner un genre</label>
+        <select
+          id="genre-select"
+          value={selectedGenre}
+          onChange={handleGenreChange}
+        >
+          <option value="">Sélectionner un genre</option>
+          {genres.map((genre) => (
+            <option key={genre.id} value={genre.id}>
+              {genre.name}
+            </option>
+          ))}
+        </select>
+        <button type="submit">Rechercher</button>
       </div>
-      <button type="submit">Rechercher</button>
       <div className="filter-buttons">
-        <button className="button-top" type="button" onClick={handleTopFilter}>
+        <button
+          className="button-top"
+          type="button"
+          onClick={handleTopFilter}
+          aria-label="Filtrer les films les mieux notés"
+        >
           Top <img src="/img/arrow-up.svg" alt="Top" className="filter-icon" />
         </button>
         <button
           className="button-flop"
           type="button"
           onClick={handleFlopFilter}
+          aria-label="Filtrer les films les moins bien notés"
         >
           <img src="/img/arrow-down.svg" alt="Flop" className="filter-icon" />
           Flop
         </button>
       </div>
+      <p className="tmdb-credit">Données fournies par The Movie Database</p>
     </form>
   );
 };

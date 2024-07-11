@@ -3,56 +3,91 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-}
 
-.search-form input {
-  width: 200px;
-  padding: 5px;
-  font-size: 1.25rem;
-  text-align: center;
-  border: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
+  .genre-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 
-.search-form button {
-  width: 200px;
-  padding: 5px 20px;
-  font-size: 1.25rem;
-  background-color: $color-1;
-  color: white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    select {
+      width: 200px;
+      padding: 5px;
+      font-size: 1.25rem;
+      text-align: center;
+      border: none;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-bottom: 5px;
+    }
 
-.search-form button:hover {
-  background-color: $color-2;
-}
+    button {
+      width: 200px;
+      padding: 5px 20px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      background-color: $color-1;
+      color: $black;
+      border: none;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
 
-.filter-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-
-  .button-top {
-    width: 100px;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 0;
+      &:hover {
+        background-color: $color-2;
+      }
+    }
   }
 
-  .button-flop {
-    width: 100px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 0;
-  }
-}
+  .filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 
-.filter-icon {
-  width: 12px;
-  margin-left: 10px;
-  margin-right: 10px;
-  vertical-align: middle;
+    .button-top {
+      width: 100px;
+      padding: 5px;
+      font-size: 1.25rem;
+      background-color: $green-dark;
+      color: $black;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      &:hover {
+        background-color: $green-light;
+      }
+    }
+
+    .button-flop {
+      width: 100px;
+      padding: 5px;
+      font-size: 1.25rem;
+      background-color: $red-dark;
+      color: $black;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      &:hover {
+        background-color: $red-light;
+      }
+    }
+  }
+
+  .filter-icon {
+    width: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .tmdb-credit {
+    font-size: 16px;
+  }
 }

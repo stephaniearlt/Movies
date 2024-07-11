@@ -6,10 +6,15 @@ const Header = () => {
 
   return (
     <header className="header">
+      <h1>Movies</h1>
       <nav>
         <ul className="nav-links">
           <li>
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? "active" : ""}
+              aria-current={location.pathname === "/" ? "page" : undefined}
+            >
               Accueil
             </Link>
           </li>
@@ -17,13 +22,15 @@ const Header = () => {
             <Link
               to="/favorites"
               className={location.pathname === "/favorites" ? "active" : ""}
+              aria-current={
+                location.pathname === "/favorites" ? "page" : undefined
+              }
             >
-              Coups de coeur
+              Favoris 
             </Link>
           </li>
         </ul>
       </nav>
-      <h1>Movies</h1>
     </header>
   );
 };

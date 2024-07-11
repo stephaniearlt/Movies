@@ -12,9 +12,13 @@ const Footer = () => {
         />
       </Link>
       <p>
-        &copy; 2024 Movies. Créatrice Stéphanie Arlt -{" "}
-        <a href="https://stephaniearlt.fr" target="blank">
-          Découvrez tous ses projets.
+        &copy; 2024 Movies. Développé par Stéphanie Arlt -{" "}
+        <a
+          href="https://stephaniearlt.fr/realisations/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Découvrez toutes mes créations.
         </a>
       </p>
     </footer>

@@ -15,10 +15,13 @@ $color-2: #212040;
 $color-3: rgb(100, 100, 100);
 $black: #060d2c;
 $white: rgb(238, 238, 238);
+$red-light: #e57373;
+$red-dark: #ff5733;
+$green-light: #008000;
+$green-dark: #4caf50;
 
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: $font-1;
 }
@@ -26,7 +29,24 @@ $white: rgb(238, 238, 238);
 body {
   background: $color-2;
   color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  body {
+    justify-content: flex-start;
+    padding: 0 20px; 
+  }
+}
+
 li {
   list-style: none;
 }
@@ -34,4 +54,15 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

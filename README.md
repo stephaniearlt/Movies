@@ -1,13 +1,20 @@
-## Application de Recherche de Films
+## Projet Movies
 
-Cette application web permet aux utilisateurs de rechercher des films par titre, avec la possibilité de filtrer les résultats par classement (Top ou Flop) basé sur les évaluations des utilisateurs.
+Projet Movies est une application web permettant de rechercher et de sauvegarder vos films préférés. L'application utilise React.js et l'API TMDB pour obtenir les informations sur les films.
+
+## Fonctionnalités
+
+- Recherche de films par genre.
+- Affichage des détails des films, y compris les affiches, les résumés et les évaluations.
+- Ajout et suppression de films aux favoris.
+- Visualisation des films favoris.
 
 ## Technologies Utilisées
 
-- React : Framework JavaScript pour la construction de l'interface utilisateur.
-- React Router : Gestion de la navigation dans l'application.
-- API TMDb : Source de données pour obtenir les informations sur les films.
-- CSS (Sass) : Styles personnalisés pour l'interface utilisateur.
+- React - Framework JavaScript pour la construction d'interfaces utilisateur.
+- React Router - Pour la navigation à travers les différentes pages de l'application.
+- CSS (SCSS) - Utilisé pour styliser l'application.
+- TMDB API - Pour obtenir les données des films. Visualisation jusqu'à 20 films.
 
 ## Contributions
 

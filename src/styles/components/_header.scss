@@ -1,18 +1,23 @@
 .header {
+  text-align: center;
+
   h1 {
     font-size: 3.3rem;
     text-shadow: 2px 3px 0px $color-1;
-    text-align: center;
     letter-spacing: 2px;
+    margin-bottom: 20px;
   }
+
   nav {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    text-align: left;
 
     ul {
       display: flex;
+      justify-content: center;
 
       li {
         margin-right: 15px;
@@ -21,11 +26,9 @@
           text-decoration: none;
           color: $white;
           border-radius: 10px;
-          text-align: center;
           padding: 5px 20px;
 
           &:visited {
-            text-decoration: none;
             color: $white;
           }
           &:hover {
@@ -39,6 +42,29 @@
           &:hover {
             background: $black;
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      position: relative;
+      text-align: center;
+      left: auto;
+      top: auto;
+
+      ul {
+        flex-direction: column;
+        padding-left: 0px;
+
+        li {
+          margin-right: 0px;
+          padding-top: 20px;
         }
       }
     }
